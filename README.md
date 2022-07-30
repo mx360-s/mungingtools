@@ -1,2 +1,2 @@
 # Python-by-example
-A small tools in python
+A list of small tools in python
