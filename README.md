@@ -1,2 +1,2 @@
-# Python-by-example
-A list of small tools in python
+# &mu;Py
+Yet another list of small tools in python
