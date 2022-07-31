@@ -1,3 +1,4 @@
+# David Ochoa 2022 MIT lic
 # A very simple step: When we make web scraping the text can contain extra-spaces, new line character and so on. This function delete that.
 # Consume string and return string
 # No dependecies
