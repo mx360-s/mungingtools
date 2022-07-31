@@ -1,3 +1,4 @@
+# David Ochoa 2022 MIT lic
 # When Make web scraping the data commonly has a title and the data are after ':'
 # Consume string and return a dictionary
 # No dependecies
