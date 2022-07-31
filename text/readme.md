@@ -1,4 +1,4 @@
-# data munging #
+# Text munging #
 
 A list of very simple steps in the Text Muging:
  - [RemoveExtraWhite](https://github.com/devicemxl/-mu-Munging/blob/raiz/text/RemoveExtraWhite.py)
