@@ -1,6 +1,6 @@
 # Web Scraping #
 
- - [GetMozService](https://github.com/devicemxl/-mu-nging/blob/raiz/Web%20Scraping/GetMozService.py)
+ - [GetMozService](GetMozService.py)
      - When we make web scraping sometimes need start a webdriver, this function start a Mozilla driver and then install it if is not present. Example of use:
     >
           from bs4 import BeautifulSoup
