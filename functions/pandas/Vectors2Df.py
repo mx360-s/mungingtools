@@ -1,3 +1,4 @@
+# David Ochoa 2022 MIT lic
 # In this case convert a vector list to Pandas Data Frame
 # ingest a list of lists and a list of column names <- Vector2Df([y,u], c)
 # return a pandas dataframe
