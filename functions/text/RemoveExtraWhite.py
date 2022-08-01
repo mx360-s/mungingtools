@@ -1,3 +1,4 @@
+# David Ochoa 2022 MIT lic
 # When Make web scraping the text can contain extra-spaces. This function delete that.
 # Consume string and return string
 # No dependecies
