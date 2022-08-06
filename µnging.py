@@ -1,75 +1,66 @@
 # µnging tools
 #
+# inspired by anrie's hack https://stackoverflow.com/a/56592789/14879731
+from json import dumps
+from yaml import safe_load
+from fold_to_ascii import fold
+
 # When Make web scraping the data commonly has a title and the data are after ':'
 # Consume string and return a dictionary
 # No dependecies
-def KeyAndValue(a,d):    
-    b = a.split(d)
-    c=dict()
-    c[b[0]]=b[1]
+def KeyAndValue(a, d):
+    b = fold(a).split(d)
+    c = dict()
+    c[b[0]] = b[1]
     return c
 
 # When Make web scraping the text can contain extra-spaces. This function delete that.
 # Consume string and return string
 # No dependecies
+
 def RemoveExtraWhite(a):
-    d = a.split()
-    b = d.copy()
-    for c in range(len(d)):
-        if c == 0:
-            if d[c] == '': b[c].remove
-        else: None
-        if d[c-1] != '':
-            if d[c] == '': b[c].remove
-    e = " ".join(b)
-    return e
+    a = fold(a)# "Clean" to common ascii
+    a = safe_load(a)# load as yaml cleaning linebreaks with some tolerance
+    a = str(dumps(a))# Trnasform in "orthodoxe" string object
+    return a
 
 # When Make web scraping the text can contain extra-spaces, new line character and other by the way. This function delete that.
-# Consume string and return string
-# No dependecies
-def WebCleanText(a):
-	B=''
-	A=' '
-	a.replace(',',A).replace("'",B).replace('  ',A).replace('\t',B).replace('\r',B).replace('\n',B).replace('[',A).replace(']',A)
-	a.split(A)
-	C=len(a)-1
-	D=0
-	if a[0]==A:D=1
-	else:D=0
-	if a[C]==A:E=C-1
-	else:E=C
-	F=str(a[D:E])
-	return F
-# pandas
-# In this case convert a vector list to Pandas Data Frame
-# ingest a list of lists and a list of column names <- Vector2Df([y,u], c)
-# pandas as dependency
-#
-from pandas import DataFrame
-# Exceptions
-class vectors(Exception):
-	def __init__(vectors,error,message='o_0 \n Inconsistency: Diferent Number of Vectors & Column Names'):vectors.error=error;vectors.message=message;super().__init__(vectors.message)
-	def __str__(vectors):return f"{vectors.error} -> {vectors.message}"
-class rows(Exception):
-	def __init__(rows,error,message='0_o \n Diferent Number Of Rows in Vectors'):rows.error=error;rows.message=message;super().__init__(rows.message)
-	def __str__(rows):return f"{rows.error} -> {rows.message}"
-# vector list to Pandas Data Frame
-def Vectors2Df(b=None, c=None):
-    dic = {}
-    if len(b) != len(c):  raise vectors(Exception)
-    else:
-        try:
-            for d in range(len(c)):
-                dic[c[d]] = b[d]
-            df = DataFrame(data=dic)
-            return df
-        except: raise rows(Exception)
+# Consume string and return ‘Basic Latin’ Unicode block string
+# fold_to_ascii as dependecy
 
-y = ['a','b','c']
-u = ['d','e','f']
-c = ['g',2]
-Vectors2Df([y,u], c)
-Vectors2Df([u], str(c[0]) )
+def WebCleanText(a):
+    B = ''
+    A = ' '
+    a = RemoveExtraWhite(a)
+    a = a.replace('"',B).replace(',',A)
+    a = a.replace('  ',B)
+    return a
+
+# pandas	
+# In this case convert a vector list to Pandas Data Frame	
+# ingest a list of lists and a list of column names <- Vector2Df([y,u], c)	
+# pandas as dependency	
+#	
+from pandas import DataFrame	
+# Exceptions	
+class vectors(Exception):	
+	def __init__(vectors,error,message='o_0 \n Inconsistency: Diferent Number of Vectors & Column Names'):vectors.error=error;vectors.message=message;super().__init__(vectors.message)	
+	def __str__(vectors):return f"{vectors.error} -> {vectors.message}"	
+class rows(Exception):	
+	def __init__(rows,error,message='0_o \n Diferent Number Of Rows in Vectors'):rows.error=error;rows.message=message;super().__init__(rows.message)	
+	def __str__(rows):return f"{rows.error} -> {rows.message}"	
+# vector list to Pandas Data Frame	
+def Vectors2Df(b=None, c=None):	
+    dic = {}	
+    if len(b) != len(c):  raise vectors(Exception)	
+    else:	
+        try:	
+            for d in range(len(c)):	
+                dic[c[d]] = b[d]	
+            df = DataFrame(data=dic)	
+            return df	
+        except: raise rows(Exception)	
+#
 # Web Scraping
 # Start a web driver service with mozilla
 # None to ingest, return a web driver service with mozilla
