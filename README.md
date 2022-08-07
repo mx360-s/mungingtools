@@ -1,5 +1,5 @@
 # &mu;nging
-Yet another list of small tools in python, you can use the functions or the pseudo-libray; this is a small work in progress and is composed by some parts:
+Yet another list of small tools in python, this is a small work in progress and is composed by some parts:
 
 ## Text munging ##
 
