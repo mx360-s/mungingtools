@@ -18,7 +18,7 @@ def KeyAndValue(a, d):
 # Consume string and return string
 # No dependecies
 
-def RemoveExtraWhite(a):
+def ExtraWhite(a):
     a = fold(a)# "Clean" to common ascii
     a = safe_load(a)# load as yaml cleaning linebreaks with some tolerance
     a = str(dumps(a))# Trnasform in "orthodoxe" string object
@@ -31,7 +31,7 @@ def RemoveExtraWhite(a):
 def WebCleanText(a):
     B = ''
     A = ' '
-    a = RemoveExtraWhite(a)
+    a = ExtraWhite(a)
     a = a.replace('"',B).replace(',',A)
     a = a.replace('  ',B)
     return a
