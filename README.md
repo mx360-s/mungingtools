@@ -4,7 +4,7 @@ Yet another list of small tools in python, you can use the functions or the pseu
 ## Text munging ##
 
 A list of very simple steps in the Text Muging:
- - **RemoveExtraWhite( *string* )**
+ - **ExtraWhite( *string* )**
     - When we make web scraping the text can contain extra-spaces at start and end, new line character and so on. This function delete that.
  - **WebCleanText( *string* )**
     - When we make web scraping the text can contain extra-spaces in the middle, commas and so on. This function delete that.
