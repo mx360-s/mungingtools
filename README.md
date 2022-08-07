@@ -5,7 +5,7 @@ Yet another list of small tools in python, you can use the functions or the pseu
 
 A list of very simple steps in the Text Muging:
  - **ExtraWhite( *string* )**
-    - When we make web scraping the text can contain extra-spaces at start and end, new line character and so on. This function delete that.
+    - When we make web scraping the text can contain extra-spaces at start and end, new line character and so on. This function delete that and remove extra first 127 ASCII with [a nice spanishdict work](https://github.com/spanishdict/fold_to_ascii).
  - **WebCleanText( *string* )**
     - When we make web scraping the text can contain extra-spaces in the middle, commas and so on. This function delete that.
  - **KeyAndValue( *string*, *symbol string* )**
@@ -32,7 +32,7 @@ A list of very simple shortcuts for pandas work:
      - When we make web scraping sometimes need start a webdriver, this function start a Mozilla driver and then install it if is not present. Example of use:
     >
           from bs4 import BeautifulSoup
-          from µnging import GetMozService
+          from munging import GetMozService
           #
           url_Base = "https://pagename.com/busqueda/en1/use/"
           
