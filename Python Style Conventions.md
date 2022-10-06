@@ -34,20 +34,17 @@ Task functions (void) performs a task, doesn't return a value, are verbs-like, a
 
 ### Capitalization ###
 
-Functions use 'PascalCase', multi-word names aren't separated:
+Functions and Variables use 'PascalCase', multi-word names aren't separated:
 
  - GetInputFromUser()
  - DisplayOutput()
+ - Cost = [];
+ - Number_Of_Guesses = {};
 
-Constants & Syntactic Macros use all uppercase letters (SCREAMING SNAKE CASE), multi-word names are separated by underscores:
+Constants, tuples & Syntactic Macros use all uppercase letters (SCREAMING SNAKE CASE), multi-word names are separated by underscores:
 
  - SIZE = 100;
  - double TAX_RATE = 0.15;
-
-Variables use "Pascal_Snake_Case" notation:
-
- - Cost = [];
- - Number_Of_Guesses = {};
 
 ### whitespacing ###
 
