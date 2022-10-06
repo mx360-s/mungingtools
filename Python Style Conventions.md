@@ -86,7 +86,7 @@ When your entire program is contained in a single source code file:
  - Maximum Length of Source Code Lines: whatever value you choose must be stricly less than 80.
  - Only TAB Characters in Source Code
  - Each script should at a minimum describe briefly what it does when it runs
-
+ - Always delete unused variables: *del VarName*
 ## Sources ##
 
  - https://cs.smu.ca/~porter/csc/ref/cpp_style.html
