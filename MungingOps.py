@@ -1,10 +1,21 @@
 # µnging tools
-#
-# inspired by anrie's hack https://stackoverflow.com/a/56592789/14879731
+# Numeric Tools and Data Dictionary
+import pandas as pd
+import numpy as np
+# String tools
 from json import dumps
 from yaml import safe_load
 from fold_to_ascii import fold
+# Date Tools
+import datetime
+'''
+# ==============================================================
+    				           	    String tools
 
+
+inspired by anrie's hack https://stackoverflow.com/a/56592789/14879731
+'''
+#
 # When Make web scraping the data commonly has a title and the data are after ':'
 # Consume string and return a dictionary
 # No dependecies
@@ -91,6 +102,54 @@ def GetMozService():
             driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), executable_path='geckodriver.exe')
     except: raise NonInstall(Exception)
     return driver
+'''
+# ==============================================================
+    				Numerical Format Transformations
+
+'''
+def Toint8(DataSET,ToEdit):
+    for i in ToEdit:
+        chng=[]
+        for j in DataSET[i]:
+            try:
+                chng.append(np.int8(j))
+            except:
+                chng.append(None)
+        DataSET[i] = chng
+    return DataSET
+
+def Toint32(DataSET,ToEdit):
+    for i in ToEdit:
+        chng=[]
+        for j in DataSET[i]:
+            try:
+                chng.append(np.int32(j))
+            except:
+                chng.append(None)
+        DataSET[i] = chng
+    return DataSET
+
+def Tofloat64(DataSET,ToEdit):
+    for i in ToEdit:
+        chng=[]
+        for j in DataSET[i]:
+            try:
+                chng.append(np.float64(j))
+            except:
+                chng.append(None)
+        DataSET[i] = chng
+    return DataSET
+
+def ToStr(DataSET,ToEdit):
+    for i in ToEdit:
+        chng=[]
+        for j in DataSET[i]:
+            try:
+                chng.append(str(j))
+            except:
+                chng.append(None)
+        DataSET[i] = chng
+    return DataSET
 '''
 # ==============================================================
     				           Data Dictionary Setup
