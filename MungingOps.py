@@ -8,7 +8,6 @@ from yaml import safe_load
 from fold_to_ascii import fold
 # Date Tools
 import datetime
-'''
 
 def decimalToBinary(n):
     return ''.join(format(ord(i), '08b') for i in n)
@@ -40,6 +39,7 @@ def lcs(i,j,X,Y,count):
     count = max(count, max(lcs(i, j - 1,X,Y, 0), lcs(i - 1, j,X,Y, 0)))
     return count
 
+'''
 # ==============================================================
     				           	    String tools
 
