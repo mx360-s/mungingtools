@@ -1,7 +1,7 @@
-# &mu;nging
-Yet another little list of ~~tools~~ shortcuts in python, this is a small work in progress and is composed by some parts:
+# μnging
+Yet nnother little μnging list of ~~tools~~ shortcuts in python, this is a small work in progress and is composed by some parts:
 
-## Text munging ##
+## Text μnging ##
 
 A list of very simple steps in the Text Muging:
  - **ExtraWhite( *string* )**
