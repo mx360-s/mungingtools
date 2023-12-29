@@ -1,5 +1,5 @@
 # μnging
-Yet nnother little μnging list of ~~tools~~ shortcuts in python, this is a small work in progress and is composed by some parts:
+Yet another little list of μnging ~~tools~~ shortcuts in python, this is a small work in progress and is composed by some parts:
 
 ## Text μnging ##
 
